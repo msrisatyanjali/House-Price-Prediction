@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>🏡 House Price Prediction App 🏡</h2>
+        <form id="prediction-form">
+            <div class="form-group">
+                <label for="sqft_living">Living Area (sqft):</label>
+                <input type="number" id="sqft_living" name="sqft_living" required>
+            </div>
+            <div class="form-group">
+                <label for="bedrooms">Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms" required>
+            </div>
+            <div class="form-group">
+                <label for="bathrooms">Bathrooms:</label>
+                <input type="number" id="bathrooms" name="bathrooms" step="0.5" required>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zip Code:</label>
+                <input type="text" id="zipcode" name="zipcode" maxlength="5" required>
+            </div>
+            <button type="button" id="predict-btn">Predict Price</button>
+        </form>
+        <p id="output"></p>
+    </div>
+</body>
+</html>
