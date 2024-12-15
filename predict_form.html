@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🏠 Prediction Form</h2>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <div class="form-group">
+                <label for="sqft_living">Living Area (sqft):</label>
+                <input type="number" id="sqft_living" name="sqft_living" min="100" max="10000" required aria-label="Living Area (sqft)">
+            </div>
+            <div class="form-group">
+                <label for="bedrooms">Number of Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms" min="1" max="100" required aria-label="Number of Bedrooms">
+            </div>
+            <div class="form-group">
+                <label for="bathrooms">Number of Bathrooms:</label>
+                <input type="number" step="0.5" id="bathrooms" name="bathrooms" min="1" max="20" required aria-label="Number of Bathrooms">
+            </div>
+            <div class="form-group">
+                <label for="floors">Number of Floors:</label>
+                <input type="number" step="0.5" id="floors" name="floors" min="1" max="50" required aria-label="Number of Floors">
+            </div>
+            <div class="form-group">
+                <label for="sqft_basement">Basement Area (sqft):</label>
+                <input type="number" id="sqft_basement" name="sqft_basement" min="0" max="5000" required aria-label="Basement Area (sqft)">
+            </div>
+            <div class="form-group">
+                <label for="sqft_above">Above Ground Area (sqft):</label>
+                <input type="number" id="sqft_above" name="sqft_above" min="100" max="10000" required aria-label="Above Ground Area (sqft)">
+            </div>
+            <div class="form-group">
+                <label for="waterfront">Waterfront View:</label>
+                <select id="waterfront" name="waterfront" required aria-label="Waterfront View">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sqft_lot">Lot Area (sqft):</label>
+                <input type="number" id="sqft_lot" name="sqft_lot" min="100" max="100000" required aria-label="Lot Area (sqft)">
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zipcode:</label>
+                <input type="number" id="zipcode" name="zipcode" pattern="\d{5}" maxlength="5" minlength="5" required aria-label="Zipcode">
+            </div>
+            <button type="submit" class="button">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
